@@ -2,7 +2,7 @@ import mysql.connector
 
 
 def Create_db():
-    db = mysql.connector.connect(user='root', password='LikhithKumarS1', host='localhost')
+    db = mysql.connector.connect(user='root', password='Pass', host='localhost')
     try:
         if db.is_connected():
             cur=db.cursor()
@@ -15,7 +15,7 @@ def Create_db():
 
 def Create_tb():
     Tb_name=input("Enter table name to be created: ")
-    db = mysql.connector.connect(user='root', password='LikhithKumarS1', host='localhost', database='SHOP')
+    db = mysql.connector.connect(user='root', password='Pass', host='localhost', database='SHOP')
     if db.is_connected():
         cur = db.cursor()
         Q="CREATE TABLE {}(ITEMCODE INT PRIMARY KEY, PRODUCTNAME VARCHAR(60), QUANTITY INT(4), PRICE FLOAT(6,2))".format(Tb_name)
@@ -24,7 +24,7 @@ def Create_tb():
     db.close()
 
 def view():
-    db = mysql.connector.connect(user='root', password='LikhithKumarS1', host='localhost', database='Shop')
+    db = mysql.connector.connect(user='root', password='Pass', host='localhost', database='Shop')
     cur=db.cursor()
     print("1.Search for specific item")
     print("2.View all")
@@ -49,7 +49,7 @@ def view():
     db.close()
 
 def Modify():
-    db = mysql.connector.connect(user='root', password='LikhithKumarS1', host='localhost', database='Shop')
+    db = mysql.connector.connect(user='root', password='Pass', host='localhost', database='Shop')
     cur=db.cursor()
     opt='y'
     while opt=='y':
@@ -65,7 +65,7 @@ def Modify():
     db.close()
 
 def Query():
-    db = mysql.connector.connect(user='root', password='LikhithKumarS1', host='localhost', database='Shop')
+    db = mysql.connector.connect(user='root', password='Pass', host='localhost', database='Shop')
     cur=db.cursor()
     Q=input("Enter your own query: ")
     cur.execute(Q)
@@ -74,7 +74,7 @@ def Query():
     db.close()
 
 def Select():
-    db = mysql.connector.connect(user='root', password='LikhithKumarS1', host='localhost', database='Shop')
+    db = mysql.connector.connect(user='root', password='Pass', host='localhost', database='Shop')
     cur=db.cursor()
     op='y'
     lt=[]
