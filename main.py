@@ -89,6 +89,7 @@ def Select():
             lis=row[3]
             print("The prices of the items is: ", lis)
             print("The total price of all the items selected is: ", sum(lis))
+    db.close()
 
 print("1.Admin")
 print("2.Buyer")
