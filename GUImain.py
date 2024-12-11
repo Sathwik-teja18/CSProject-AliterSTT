@@ -1,7 +1,7 @@
 #!!This program is still a work in progress!!
 
 import tkinter as tk
-import mysql.connector as ms
+import mysql.connector
 
 
 class Gui(tk.Tk):
@@ -36,6 +36,15 @@ class Gui(tk.Tk):
 
     def BList(self):
         self.BB1.forget()
+        try:
+            self.db=mysql.connector.connect(user='root', password='', host='localhost', database='SHOP')
+            self.cu=self.db.cursor()
+            self.Q="SELECT * FROM GROCCERIES"
+            self.cu.execute(self.Q)
+            self.data=self.cu.fetchall()
+            print(self.data)
+        except  mysql.connector.Error as err:
+            print(f"Error {err}")
 
 
 Gui()
